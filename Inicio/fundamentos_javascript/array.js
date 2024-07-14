@@ -14,3 +14,4 @@ console.log(valores.length)
 delete valores[0]
 
 console.log(valores)
+

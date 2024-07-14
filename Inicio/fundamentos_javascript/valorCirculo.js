@@ -4,9 +4,9 @@ var c = 0
 
 c =+a
 
-var recebe =[b,a]==[a,b]
+[b,a]==[a,b]
 
 console.log(a)
-console.log(recebe)
+console.log(b)
 
 

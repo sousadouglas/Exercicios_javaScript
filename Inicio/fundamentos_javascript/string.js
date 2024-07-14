@@ -7,3 +7,4 @@ console.log('escola'.concat("!"))
 console.log(escola.replace(3,'e'))
 
 console.log('ana,Maria,Pedro'.split(/,/))
+

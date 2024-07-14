@@ -11,7 +11,8 @@ function Pessoa(){
 
 
 
-
+//nesse caso criando um artificio para
+//nao precisar usar o bind
 function Pessoa2(){
     this.idade=0
 const self=this
