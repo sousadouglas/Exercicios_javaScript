@@ -222,3 +222,336 @@ fatorial=(fator)=>{
 
 fatorial(5)
 
+/*17)​ Um funcionário irá receber um aumento de acordo com o seu plano de 
+trabalho, de acordo com a tabela abaixo:  
+Plano  Aumento 
+A  10% 
+B  15% 
+C  20% 
+Faça uma função que leia o plano de trabalho e o salário atual de um funcionário e calcula e imprime o seu 
+novo salário. Use a estrutura switch e faça um caso default que indique que o plano é inválido. 
+*/
+
+novoSalario=(plano,salario)=>{
+    switch(plano){
+        case 'a':{
+            return salarios=((salario*10)/100+salario);
+            break;
+        }
+
+        case 'b':{
+            return salarios=((salario*20)/100+salario);
+            break;
+        }
+
+        case 'c':{
+            return salarios=((salario*30)/100+salario);
+            break;
+        }
+        default:{
+         return console.log("valor invalido")
+        }
+    }
+}
+
+
+
+console.log(novoSalario('c',1000))
+console.log('resultado')
+
+/*18)​ Faça um programa que leia um número entre 0 e 10, e escreva este número por extenso. Use o comando 
+switch. Crie um case default que escreva ‘Número fora do intervalo.’*/
+
+extenso=(numero)=>{
+    switch(numero){
+        case 1:{
+            console.log("um")
+        break;
+        }
+        
+            case 2:{
+                console.log("dois")
+            break;
+            }
+           
+                case 3:{
+                    console.log("tres")
+                break;
+                }
+                
+                    case 4:{
+                        console.log("quatro")
+                    break;
+                    }
+                   
+                        case 5:{
+                            console.log("cinco")
+                        break;
+                        }
+                        default:{
+                            console.log("valor invalido")
+                            break;
+                        }
+    }
+
+}
+
+extenso(8)
+
+/*19) ​O cardápio de uma lanchonete é o seguinte: 
+Código  Descrição do Produto  Preço 
+100  Cachorro Quente  R$ 3,00 
+200  Hambúrguer Simples  R$ 4,00 
+300  Cheeseburguer  R$ 5,50 
+400  Bauru  R$ 7,50 
+500  Refrigerante  R$ 3,50 
+600  Suco  R$ 2,80 
+Implemente uma  função que receba como parâmetros o código do item pedido, a quantidade e calcule o valor 
+a ser pago por aquele lanche. Considere que a cada execução somente será calculado um item. Use o 
+comando switch. Crie um caso default para produto não existente.*/
+
+function hamburgueria (cod,qtd){
+    switch(cod){
+        case 100:{
+            console.log(`O valor do Cachorro quente ${qtd*3.00}`)
+            break;
+        }
+        case 200:{
+            console.log(`O valor do Hamburguer ${qtd*4.00}`)
+            break;
+        }
+        case 300:{
+            console.log(`O valor do Chesburguer ${qtd*5.50}`)
+            break;
+        }
+        case 400:{
+            console.log(`O valor do bauru ${qtd*7.50}`)
+            break;
+        }
+        case 500:{
+            console.log(`O valor do refrigerante ${qtd*3.50}`)
+            break;
+        }
+        case 600:{
+            console.log(`O valor do suco ${qtd*2.80}`)
+            break;
+        }
+        default:{
+            console.log('valor errado')
+        }
+    }
+}
+
+hamburgueria(400,2)
+
+/*20)​ Crie um programa para informar quais e quantas notas são necessárias para entregar o mínimo de cédulas 
+para um determinado valor informado pelo usuário considerando notas de R$ 100, R$ 50, R$ 10 e R$ 5 e R$ 1. 
+Seu programa deve mostrar apenas as notas utilizadas. Por exemplo, ao solicitar R$18, o programa deve 
+informar apenas a seguinte informação (note que não foram exibidas informações sobre as demais cédulas): 1 
+nota(s) de R$ 10. 1 nota(s) de R$ 5. 3 nota(s) de R$ 1.*/
+
+let caixa=(money)=>{
+    let nota100=0
+    let nota50=0
+    let nota10=0
+    let nota5=0
+    let nota1=0
+while(money>0){
+    if(money>=100){
+        nota100=Math.floor(money/100)
+
+        money=(money%100)
+        
+    }if(money>=50){
+        nota50=Math.floor(money/50)
+        money=(money%50)
+        
+    }
+    if(money>=10){
+        nota10=Math.floor(money/10)
+        money=(money%10)
+        
+    }if(money>=5){
+        nota5=Math.floor(money/5)
+        money=(money%5)
+        
+    }
+    if(money>=1){
+        nota1=(money/1)
+        money=(money%1)
+        
+    }
+}
+console.log(`notas de 1, ${nota1} `)
+   console.log(` notas de 5, ${nota5}`)
+    console.log(`notas de 10, ${nota10}`)
+    console.log(`notas de 50, ${nota50}`) 
+    console.log(`notas de 100, ${nota100}`)
+
+}
+
+caixa(280)
+
+/*21)​ Criar um programa para identificar o valor a ser pago por um plano de saúde dada a idade do conveniado 
+considerando que todos pagam R$ 100 mais um adicional conforme a seguinte tabela: 1) crianças com menos 
+de 10 anos pagam R$80; 2) conveniados com idade entre 10 e 30 anos pagam R$50; 3) conveniados com 
+idade acima de  30 e até 60 anos pagam R$ 95; e 4) conveniados acima de 60 anos pagam R$130*/
+function convenio (idade){
+    if(idade<10){
+        return 100 + 80
+    }if(idade<30){
+        return 100 + 50
+
+    }
+
+    if(idade<95){
+        return 100 + 95
+    }
+    else{
+        return 100+130
+    }
+} 
+ 
+console.log(`o valor pago ${convenio(9)}`)
+
+
+/*22)​ Criar uma função para calcular o valor a ser pago de anuidade de uma associação. A função recebe como 
+parâmetro um inteiro que representa o mês (1 - janeiro, 2 - fevereiro...) que foi paga e o valor da anuidade. A 
+anuidade deve ser paga no mês de janeiro. Por mês, é cobrado 5% de juros (sob o regime de juros 
+compostos). O retorno deve ser o valor a ser pago para o respectivo mês escolhido. */
+
+let valormaisjuros=(mesPagamento)=>{
+    let valoraPagar=0
+    let valor =200
+    for(i=1;i<=mesPagamento;i++){
+        valoraPagar+=(((valor*5)/100)+valor)
+        valor=valoraPagar
+        valoraPagar=0
+    }
+    return valor
+}
+
+console.log(valormaisjuros(3).toFixed(2))
+ 
+
+
+/*23)​ Escreva um algoritmo que leia o código de um aluno e suas três notas. Calcule a média ponderada do 
+aluno, considerando que o peso para a maior nota seja 4 e para as duas restantes, 3. Mostre o código do 
+aluno, suas três notas, a média calculada e uma mensagem "APROVADO" se a média for maior ou igual a 5 e 
+"REPROVADO" se a média for menor que 5. Repita a operação até que o código lido seja negativo.*/
+
+function escola(nota1, nota2, nota3){
+    return ((nota1*4)+(nota2*3)+(nota3*3)/10)
+}
+
+console.log(`A media ponderada e ${escola(10,5,7)}`)
+
+/*24)​ Crie um programa que imprima 11 vezes a frase " Hello World!" utilizando uma estrutura de repetição while.*/
+j=11
+while(j>0){
+    console.log('Helo word')
+    j--
+}
+
+/*25) ​Escrever um programa para exibir os números de 1 até 50 na tela. */
+
+for(let i=1;i<51;i++){
+    console.log(i)
+}
+
+/*26)​ Fazer um programa para encontrar todos os pares entre 1 e 100.*/
+let contador=1
+
+for(contador=1;contador<101;contador++){
+    if(contador%2==0){
+        console.log(contador)
+    }
+}
+
+/*27)​ Construa uma função que receba como parâmetros as alturas e as taxas de crescimento anuais de duas 
+crianças e calcule se existe uma criança menor, caso exista se a criança menor ultrapassará a maior e em 
+quantos anos isso acontecerá. Utilize centímetros para as unidades de medida.*/
+
+let crecimento=(altura, tcrecimento, altura2, tcrecimento2 )=>{
+contador=0
+    if(altura!=altura2){
+        if(altura>altura2){
+            if(tcrecimento2>tcrecimento){
+                while(altura2<altura){
+                    altura2*=tcrecimento2
+                    altura*=tcrecimento
+                   contador++
+                }
+                return contador
+            }
+        }
+        else{
+
+            if(altura<altura2){
+                if(tcrecimento2<tcrecimento){
+                    while(altura2<altura){
+                        altura2*=tcrecimento2
+                        altura*=tcrecimento
+                       contador++
+                    }
+                    return contador
+                }
+            }
+
+            
+        }
+    }
+}
+
+console.log(`a quantidade de anos ${crecimento(1.5,0.4,1.2,0.5)}`)
+
+/*28) ​Ler um vetor de números inteiros e imprimir quantos são pares e quantos são ímpares.*/
+
+let vetor=[1,5,3,7,88,15,45,45,42,42,78,49,22,11,22,55,88,99,77]
+contador=0
+for(percorrer in vetor){
+    if((vetor[percorrer]%2)!==0){
+      contador++
+    }
+}
+console.log(`sao exatamente ${contador} os numeros impares`)
+
+
+/*29) ​Utilizando a estrutura de repetição for, faça uma função que percorra um vetor e conte quantos números 
+deste vetor estão no intervalo [10,20] (repare que o intervalo é fechado, ou seja, inclui o 10 e o 20) e quantos 
+deles estão fora do intervalo, escrevendo estas informações.*/
+
+let vetor2=[5,6,7,8,10,11,12,13,14,15,20,21,22,23]
+let cont=0
+for(percorre in vetor2){
+    if(vetor2[percorre]>10 && vetor2[percorre]<20){
+        cont++
+
+
+    }
+}
+
+console.log(`entre 10 e 20 a ${cont}`)
+
+
+/*30) ​Escreva um algoritmo que percorre um vetor de inteiros e defina o maior e menor valor dentro do vetor. 
+
+
+let vetore=[1,5,3,7,88,15,45,45,42,42,78,49,22,11,22,55,88,99,77]
+let maior=0
+let menor=0
+for(veto in vetore ){
+if(vetore[0]<vetore[veto+1]){
+    maior=vetore[veto+1]
+    menor=vetore[veto]
+
+}
+
+}
+
+
+*/
+
+
+/*31) ​Escrever um algoritmo que percorre um vetor de inteiros, conta quantos números negativos há nesse vetor 
+e imprime a quantidade no console.*/ 
